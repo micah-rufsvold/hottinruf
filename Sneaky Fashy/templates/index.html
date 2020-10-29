@@ -1,30 +1,33 @@
 {% extends 'base.html'%}
 
 {% block head %}
-    <title>Doc</title>
+    <title>Sneaky Fashy</title>
 {% endblock %}
 
 {% block body %} 
-<div class="content">
-    <h1>
-        Task master
-    </h1>
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <a href="">Delete</a>
-                <br>
-                <a href="">Update</a>
-            </td>
-
-        </tr>
-    </table>
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>n
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+    <h3>London</h3>
+    <p>London is the capital city of England.</p>
 </div>
+
+<div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+</div>
+  
+<div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+</div>
+
 {% endblock %}
+
+{$ block footer $}
+
+{$ endblock $}
