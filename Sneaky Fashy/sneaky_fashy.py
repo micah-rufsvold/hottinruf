@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect, flash, make_resonse
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -19,6 +19,18 @@ def index():
 @app.route('/base')
 def base_test():
     return render_template('base.html')
+@app.route('/game')
+def game():
+    return render_template('game.html')
+@app.route('/setcookie', methods = ['POST', 'GET'])
+def setcookie():
+   if request.method == 'POST':
+   user = request.form['nm']
+   room = request.form['gm']
+   resp = make_response(render_template('game.html'))
+   resp.set_cookie('userID', user)
+   
+   return resp
 
 
 if __name__ == "__main__":

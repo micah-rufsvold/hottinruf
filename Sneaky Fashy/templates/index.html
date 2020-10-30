@@ -1,43 +1,16 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 {% block head %}
-    <title>Sneaky Fashy</title>
+    <title>Sneaky Fashy - Login</title>
 {% endblock %}
 
 {% block body %} 
-
-<!-- Tab content -->
-<div id="Game Board" class="tabcontent">
-    <h3>Welcome, Name!</h3>
-    <p>Game status block</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-    <h3>Welcome, Name!</h3>
-    <p>Your role is [role].</p>
-</div>
-
-
-{% endblock %}
-
-{% block footer %}
-<div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Game Board')">Game Board</button>
-    <button class="tablinks" onclick="openTab(event, 'Role')">Role</button>
-</div>
-<script>
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    </script>
+    <form action = "/setcookie" method = "POST">
+        <p><h4>What would you like to be called?</h3></p>
+        <p><input type = 'text' name = 'nm'/></p>
+        <p><h4>What is your game room called?</h3></p>
+        <p>If you are the first one here, come up with your own room name.</p>
+        <p><input type = 'text' name = 'gm'/></p>
+        <p><input type = 'submit' value = 'Login'/></p>
+    </form>
 {% endblock %}

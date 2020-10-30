@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+{% block head %}
+    <title>Sneaky Fashy</title>
+{% endblock %}
+
+{% block body %} 
+
+<!-- Tab content -->
+<div id="Game Board" class="tabcontent">
+    <h3>Welcome, Name!</h3>
+    <p>Game status block</p>
+</div>
+
+<div id="Role" class="tabcontent">
+    <h3>Welcome, Name!</h3>
+    <p>Your role is [role].</p>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Game Board')">Game Board</button>
+    <button class="tablinks" onclick="openTab(event, 'Role')">Role</button>
+</div>
+<script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+{% endblock %}
