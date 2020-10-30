@@ -1,11 +1,22 @@
-body {
-    margin: 100;
-    font-family: Arial;
-    font-style: ;
-    background-color:#fed8b1;
-    text-align:center
+html, body {
+  height:100%;
+  margin: 0;
+  font-family: Arial;
+  background-color:#fed8b1;
+  text-align:center
+}
+.content {
+  min-height: 100%;
 }
 
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+.footer {
+  height:50px;
+  margin-top:-50px;
+}
  /* Style the tab */
  .tab {
     overflow: hidden;
@@ -17,11 +28,14 @@ body {
   .tab button {
     background-color: inherit;
     float: left;
-    border: none;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    width: 50%;
   }
   
   /* Change background color of buttons on hover */

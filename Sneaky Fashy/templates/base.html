@@ -8,9 +8,14 @@
     {% block head %} {% endblock %}
 </head>
 <body>
-    {% block body %} {% endblock %}
+    <div class="content">
+        <div class="content-inside">
+            {% block body %} {% endblock %}
+        </div>
+    </div>
+    <footer class="footer">
+        {% block footer %} {% endblock %}
+    </footer>
 </body>
-<footer>
-    {% block footer %} {$ endblock $}
-</footer>
+
 </html>
