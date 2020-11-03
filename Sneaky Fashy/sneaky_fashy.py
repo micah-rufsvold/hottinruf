@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, flash, make_resonse
+from flask import Flask, render_template, url_for, request, redirect, flash, make_response
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -24,13 +24,17 @@ def game():
     return render_template('game.html')
 @app.route('/setcookie', methods = ['POST', 'GET'])
 def setcookie():
-   if request.method == 'POST':
-   user = request.form['nm']
-   room = request.form['gm']
-   resp = make_response(render_template('game.html'))
-   resp.set_cookie('userID', user)
+    if request.method == 'POST':
+        user = request.form['nm']
+        room = request.form['gm']
+        resp = make_response(render_template('game.html'))
+
+        #Need to add a .replace(/\\054/g, ',') function before using .parse()
+        # to the cookie text because the comma is not allowed. 
+        resp.set_cookie('userID', "{'userName':'"+user+"', 'gameName':'"+room+"'}")
+        
    
-   return resp
+    return resp
 
 
 if __name__ == "__main__":
