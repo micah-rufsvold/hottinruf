@@ -5,13 +5,14 @@ from os import listdir
 def create_report():
     #create a list of DFs that contain each sites' attendance log
     log_files = get_files_from_dir('Logs')
+    print(log_files)
     logs = []
     for log in log_files:
-        logs.append(pd.read_csv(log))
+        logs.append(pd.read_csv('Logs\\"'+log+'"'))
         
     #create a DF with registration data
     reg_file = get_files_from_dir('Reg_Data')[0]
-        
+    league_reg_list = pd.read_csv(reg_file)
     #create a excel_FLB object
     #for each attend_DF:
         #new_enroll = Filter reg_df on names from attend_DF
