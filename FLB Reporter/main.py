@@ -5,14 +5,14 @@ from os import listdir
 def create_report():
     #create a list of DFs that contain each sites' attendance log
     log_files = get_files_from_dir('Logs')
-    print(log_files)
     logs = []
     for log in log_files:
-        logs.append(pd.read_csv('Logs\\"'+log+'"'))
-        
+        logs.append(pd.read_csv(log))
+  
     #create a DF with registration data
     reg_file = get_files_from_dir('Reg_Data')[0]
     league_reg_list = pd.read_csv(reg_file)
+    print(type(league_reg_list))
     #create a excel_FLB object
     #for each attend_DF:
         #new_enroll = Filter reg_df on names from attend_DF
@@ -21,7 +21,7 @@ def create_report():
         #parse data from attendance log to add ones and zeros to each month
 
 def get_files_from_dir(dir):
-    file_list = [f for f in listdir(dir) if isfile(join(dir, f))]
+    file_list = [open(join(dir,f), 'r') for f in listdir(dir) if isfile(join(dir, f))]
     return file_list
 
 if __name__ == '__main__':
