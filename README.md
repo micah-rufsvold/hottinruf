@@ -27,6 +27,10 @@ This iPython notebook has a class that is made up of data stuctures
 and analysis functions to interpret the global data on Covid 19 cases
 published by Johns Hokins University and served by covid19api.
 
+### Video Game Webscrape
+This tool takes a list of video game titles and scrapes important info about the game from Mobygames.com.
+
 ### Using this Code
 I have no idea why someone would want to use this code, but you may use it 
 for nonprofit reasons. 
+
