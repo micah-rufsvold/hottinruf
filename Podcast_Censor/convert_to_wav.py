@@ -11,7 +11,7 @@ def mp3_to_wav(file, dest_dir):
     sound = sound.set_frame_rate(16000)
     sound = sound.set_channels(1)
     name = file.stem
-    dst = Path(dest_dir) / name
+    dst = Path(dest_dir) / (name + '.wav')
     sound.export(dst, format="wav")
 
 

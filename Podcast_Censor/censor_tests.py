@@ -23,12 +23,12 @@ class TestCensor(unittest.TestCase):
 
     def test_convert_files_to_wav(self):
         from convert_to_wav import convert_files_to_wav
-        in_dir = 'Podcast_Censor\\Test_Files\\Test_Input'
-        out_dir = 'Podcast_Censor\\Test_Files\\Test_Intermediate'
+        in_dir = Path('Podcast_Censor/Test_Files/Test_Input')
+        out_dir = Path('Podcast_Censor/Test_Files/Test_Intermediate')
         convert_files_to_wav(in_dir,out_dir)
     
-        inputs = [f[0:-4] + '.wav' for f in listdir(in_dir) if path.isfile(path.join(in_dir,f))]
-        out = [f for f in listdir(out_dir) if path.isfile(path.join(out_dir,f))]
+        inputs = [f[0:-4] + '.wav' for f in listdir(in_dir) if path.isfile(in_dir / f)]
+        out = [f for f in listdir(out_dir) if path.isfile(out_dir / f)]
         self.assertEqual(inputs, out)
         for f in out:
             if os.path.exists(f):
