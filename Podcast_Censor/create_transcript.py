@@ -36,7 +36,7 @@ def find_curses(file):
             break
         if decoder.hyp() != None:
             print ([(seg.word, seg.prob, seg.start_frame, seg.end_frame) for seg in decoder.seg()])
-            print ("Detected keyphrase, restarting search")
+            print ("Detected curse, restarting search")
             decoder.end_utt()
             decoder.start_utt()
 
