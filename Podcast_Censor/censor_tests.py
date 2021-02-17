@@ -33,7 +33,11 @@ class TestCensor(unittest.TestCase):
         for f in out:
             if os.path.exists(f):
                 os.remove(f)
-
+    
+    def test_create_decoder():
+        from create_transcript import create_decoder
+        decoder = create_decoder()
+        
 
 
 if __name__ == "__main__":
